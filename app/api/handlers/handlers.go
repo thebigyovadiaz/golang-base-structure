@@ -9,15 +9,15 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	"github.com/thebigyovadiaz/golang-base-structure/app/api/handlers/healthgrp"
-	//v1 "github.com/thebigyovadiaz/golang-base-structure/app/api/handlers/v1"
-	//"github.com/thebigyovadiaz/golang-base-structure/business/web/v1/mid"
+	v1 "github.com/thebigyovadiaz/golang-base-structure/app/api/handlers/v1"
+	"github.com/thebigyovadiaz/golang-base-structure/business/web/v1/mid"
 	"github.com/thebigyovadiaz/golang-base-structure/foundation/logger"
 	"github.com/thebigyovadiaz/golang-base-structure/foundation/timecl"
 	"github.com/thebigyovadiaz/golang-base-structure/foundation/web"
 )
 
 const (
-	group = "/quests"
+	group = "/books-gallery"
 )
 
 type APIMuxConfig struct {
@@ -42,10 +42,8 @@ func APIMux(cfg APIMuxConfig) http.Handler {
 	})
 
 	v1.Routes(app, group, v1.Config{
-		Log:              cfg.Log,
-		DB:               cfg.DB,
-		WalletAuth:       cfg.WalletAuth,
-		PushNotification: cfg.PushNotification,
+		Log: cfg.Log,
+		DB:  cfg.DB,
 	})
 
 	return app

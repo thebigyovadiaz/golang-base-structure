@@ -31,3 +31,5 @@ go.work.sum
 .idea/
 .vscode/
 local_config.yaml
+app/api/main
+tmp
